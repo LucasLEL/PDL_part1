@@ -8,7 +8,6 @@ import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
 public class Main {
@@ -63,14 +62,29 @@ public class Main {
 			e.printStackTrace();
 		}
 
-		sc = new Scanner(System.in);
 		System.out.println("\nVeuillez choisir un résultat parmi cette liste en référant l'id désiré : ");
-		int idChoice = sc.nextInt();
+		
+		int idChoice = -1; //-1 -> id non valide
+		try{
+			idChoice = sc.nextInt();
+		}
+		 catch (Exception e) {
+		}
 
-		if (map.containsKey(idChoice))
-			System.out.println(map.get(idChoice));
-		else
-			System.out.println("L'id " + idChoice + " n'existe pas");
+		while(!map.containsKey(idChoice) || idChoice == -1){
+			if(idChoice != -1){
+				System.out.println("L'id " + idChoice + " n'existe pas, veuillez entrer un id valide :");
+				idChoice = -1; //id non valide
+			}
+			
+			try{
+				idChoice = sc.nextInt();
+			}
+			 catch (Exception e) {
+				 System.out.println("La valeur entrée '" + sc.nextLine() + "' n'est pas du type entier, veuillez réessayer : ");
+			}
+		}
+		System.out.println(map.get(idChoice));
 
 		String pageLink = "https://www.wikidata.org/wiki/Special:EntityData/" + map.get(idChoice) + ".json";
 
