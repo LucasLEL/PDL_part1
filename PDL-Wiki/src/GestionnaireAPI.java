@@ -9,7 +9,8 @@ import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
 /**
- * 
+ * Classe GestionnaireAPI
+ * Cette classe permet d'effectuer la gestion (appels, traitement des données recus) des différentes API
  */
 public class GestionnaireAPI {
 
@@ -84,8 +85,7 @@ public class GestionnaireAPI {
 
 	/**
 	 * 
-	 * @param urlPage
-	 *            : Lien vers le JSON.
+	 * @param urlPage : Lien vers le JSON.
 	 * @return
 	 * @throws ParseException
 	 * @throws JSONException
