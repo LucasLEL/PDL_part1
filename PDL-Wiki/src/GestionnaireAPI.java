@@ -33,7 +33,7 @@ public class GestionnaireAPI {
 	 * @throws IOException
 	 * @throws JSONException
 	 */
-	public JSONObject getJSON() throws IOException, JSONException {
+	public String getJSON() throws IOException, JSONException {
 
 		String urlCriterion = this.url;
 		urlCriterion += this.criterion;
@@ -48,7 +48,7 @@ public class GestionnaireAPI {
 			jsonRet += inputLine;
 		}
 		in.close();
-		return new JSONObject(jsonRet);
+		return jsonRet;
 	}
 
 	/**

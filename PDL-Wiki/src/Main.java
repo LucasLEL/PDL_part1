@@ -1,14 +1,10 @@
 import java.io.IOException;
-import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Scanner;
-
-import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
 public class Main {
@@ -33,7 +29,8 @@ public class Main {
 			criterion = sc.nextLine();
 			try {
 				wikidataAPI = new GestionnaireAPI(url, type + URLEncoder.encode(criterion, "UTF-8"));
-				jsonObj = wikidataAPI.getJSON();
+				String stringResult = wikidataAPI.getJSON();
+				jsonObj = new JSONObject(stringResult);
 				jsonArraySearch = ((JSONArray) jsonObj.get("search"));
 				if (jsonArraySearch.length() == 0) {
 					jsonArraySearch = null;
@@ -75,8 +72,11 @@ public class Main {
 		String pageLink = "https://www.wikidata.org/wiki/Special:EntityData/" + map.get(idChoice) + ".json";
 
 		try {
-			@SuppressWarnings("deprecation")
-			String data = IOUtils.toString(new URL(pageLink));
+			//Changement des attributs dans le GestionnaireAPI pour maintenant récupérer l'entity correpondante
+			wikidataAPI.setUrl(pageLink);
+			wikidataAPI.setCriterion("");
+			//Appels de la méthode getJSON() pour effectuer l'appel à l'API Wikidata
+			String data = wikidataAPI.getJSON();
 			// entitites --> Q142 (url)
 			String entityData = wikidataAPI.headerJson(data, map.get(idChoice));
 			// labels --> fr --> value
