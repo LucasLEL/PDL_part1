@@ -6,6 +6,9 @@ import java.net.URLConnection;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+/**
+ * 
+ */
 public class GestionnaireAPI {
 	
 	private String url;
@@ -16,6 +19,12 @@ public class GestionnaireAPI {
 		this.criterion = criterion;
 	}
 
+	/**
+	 * 
+	 * @return
+	 * @throws IOException
+	 * @throws JSONException
+	 */
 	public JSONObject getJSON() throws IOException, JSONException{
 
 		String urlCriterion = this.url;
