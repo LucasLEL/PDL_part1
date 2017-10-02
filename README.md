@@ -5,8 +5,8 @@ Projet Développement Logiciel : Partie 1
 
 Analyse du Projet#3 : «MatrixSynthesizerWikipedia»
 
-Lucas Lelièvre
-Clément Le Hüerou
-Olivier La Rivière
-Vincent Pelletier
-Vivien Busson
+Lucas Lelièvre, 
+Clément Le Hüerou, 
+Olivier La Rivière, 
+Vincent Pelletier, 
+Vivien Busson, 
