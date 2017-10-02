@@ -16,6 +16,11 @@ public class GestionnaireAPI {
 	private String url;
 	private String criterion;
 
+	/**
+	 * 
+	 * @param url
+	 * @param criterion
+	 */
 	public GestionnaireAPI(String url, String criterion) {
 		this.url = url;
 		this.criterion = criterion;
@@ -45,18 +50,34 @@ public class GestionnaireAPI {
 		return new JSONObject(jsonRet);
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getUrl() {
 		return url;
 	}
 
+	/**
+	 * 
+	 * @param url
+	 */
 	public void setUrl(String url) {
 		this.url = url;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getCriterion() {
 		return criterion;
 	}
 
+	/**
+	 * 
+	 * @param criterion
+	 */
 	public void setCriterion(String criterion) {
 		this.criterion = criterion;
 	}
