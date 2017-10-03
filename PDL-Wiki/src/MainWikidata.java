@@ -99,6 +99,19 @@ public class MainWikidata {
 			System.out.println("Titre : " + title);
 			String description = wikidataAPI.labelAccess(entityData, "descriptions", "fr", "value");
 			System.out.println("Description : " + description);
+			
+			//Génération CSV
+			String dataCSV = title + ";" + description;
+			String headerCSV = "Titre;Description\n";
+			GestionnaireCSV gestionnaire = new GestionnaireCSV();
+			try{
+				gestionnaire.addHeader(headerCSV, dataCSV);
+				System.out.println("\nGénération du csv OK");
+			} catch (Exception e){
+				System.out.println("\nErreur lors de la génération du CSV");
+			}
+			
+			
 		} catch (IOException | ParseException e) {
 			// e.printStackTrace();
 			System.out.println("No entity with ID " + idChoice + " was found.");
