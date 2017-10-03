@@ -3,9 +3,9 @@ import java.io.IOException;
 
 public class GestionnaireCSV {
 	
-	public void addHeader(String header, String data) throws IOException
+	public void addHeader(String titreMatrice, String header, String data) throws IOException
 	{
-		FileWriter fileWriter = new FileWriter("MonFichier.csv");
+		FileWriter fileWriter = new FileWriter(titreMatrice+".csv");
 		fileWriter.append(header);
 		addDatas(data, fileWriter);
 	}

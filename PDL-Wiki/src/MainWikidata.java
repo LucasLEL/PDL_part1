@@ -101,11 +101,12 @@ public class MainWikidata {
 			System.out.println("Description : " + description);
 			
 			//Génération CSV
-			String dataCSV = title + ";" + description;
-			String headerCSV = "Titre;Description\n";
+			String dataCSV = title + "," + description;
+			String headerCSV = "Titre,Description\n";
+			String titreMatrice = title;
 			GestionnaireCSV gestionnaire = new GestionnaireCSV();
 			try{
-				gestionnaire.addHeader(headerCSV, dataCSV);
+				gestionnaire.addHeader(titreMatrice, headerCSV, dataCSV);
 				System.out.println("\nGénération du csv OK");
 			} catch (Exception e){
 				System.out.println("\nErreur lors de la génération du CSV");
