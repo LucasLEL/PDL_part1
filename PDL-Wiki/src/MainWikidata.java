@@ -7,7 +7,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.simple.parser.ParseException;
 
-public class Main {
+public class MainWikidata {
 
 	private static Scanner sc;
 
@@ -20,7 +20,7 @@ public class Main {
 		JSONObject jsonObj = null;
 
 		sc = new Scanner(System.in);
-		System.out.println("Veuillez entrer un critère de sélection :");
+		System.out.println("Veuillez entrer un critï¿½re de sï¿½lection :");
 		GestionnaireAPI wikidataAPI = null;
 
 		JSONArray jsonArraySearch = null;
@@ -39,11 +39,11 @@ public class Main {
 				e2.printStackTrace();
 			}
 			if (jsonArraySearch == null)
-				System.out.println("Aucun résultat trouvé pour le critère : " + criterion
-						+ ", veuillez saisir un nouveau critère : ");
+				System.out.println("Aucun rï¿½sultat trouvï¿½ pour le critï¿½re : " + criterion
+						+ ", veuillez saisir un nouveau critï¿½re : ");
 		}
 
-		System.out.println("Résultat(s) pour '" + criterion + "'");
+		System.out.println("Rï¿½sultat(s) pour '" + criterion + "'");
 
 		try {
 			for (int i = 0; i < jsonArraySearch.length(); i++) {
@@ -60,7 +60,7 @@ public class Main {
 			e.printStackTrace();
 		}
 
-		System.out.println("\nVeuillez choisir un résultat parmi cette liste en référant l'id désiré : ");
+		System.out.println("\nVeuillez choisir un rï¿½sultat parmi cette liste en rï¿½fï¿½rant l'id dï¿½sirï¿½ : ");
 		
 		int idChoice = -1; //-1 -> id non valide
 		try{
@@ -79,7 +79,7 @@ public class Main {
 				idChoice = sc.nextInt();
 			}
 			 catch (Exception e) {
-				 System.out.println("La valeur entrée '" + sc.nextLine() + "' n'est pas du type entier, veuillez réessayer : ");
+				 System.out.println("La valeur entrï¿½e '" + sc.nextLine() + "' n'est pas du type entier, veuillez rï¿½essayer : ");
 			}
 		}
 		System.out.println(map.get(idChoice));
@@ -87,10 +87,10 @@ public class Main {
 		String pageLink = "https://www.wikidata.org/wiki/Special:EntityData/" + map.get(idChoice) + ".json";
 
 		try {
-			//Changement des attributs dans le GestionnaireAPI pour maintenant récupérer l'entity correpondante
+			//Changement des attributs dans le GestionnaireAPI pour maintenant rï¿½cupï¿½rer l'entity correpondante
 			wikidataAPI.setUrl(pageLink);
 			wikidataAPI.setCriterion("");
-			//Appels de la méthode getJSON() pour effectuer l'appel à l'API Wikidata
+			//Appels de la mï¿½thode getJSON() pour effectuer l'appel ï¿½ l'API Wikidata
 			String data = wikidataAPI.getJSON();
 			// entitites --> Q142 (url)
 			String entityData = wikidataAPI.headerJson(data, map.get(idChoice));

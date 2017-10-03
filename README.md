@@ -12,7 +12,7 @@ Enfin, nous avons effectué un exemple du fonctionnement de la récupération d'
 Pour plus d'informations concernant le code réalisé, merci de contacter l'un des membres du groupe par mail. 
 
 Lucas Lelièvre, 
-Clément Le Hüerou, 
+Clément Le Huërou, 
 Olivier La Rivière, 
 Vincent Pelletier, 
 Vivien Busson, 
