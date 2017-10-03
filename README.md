@@ -9,7 +9,12 @@ Le répertoire "PDL-Wiki" fourni une première approche de l'utilisation de Wiki
 Le code mis en place permet de récupérer l'identifiant d'une page (ex : "Q142") à partir d'un mot/phrase saisi(e). Une sélection parmi les différents résultats obtenus a également été mise en place. 
 Enfin, nous avons effectué un exemple du fonctionnement de la récupération d'une donnée spécifique à la recherche demandée. 
 
-Pour plus d'informations concernant le code réalisé, merci de contacter l'un des membres du groupe par mail. 
+2 jar sont nécessaire : 
+- java-json.jar (http://www.java2s.com/Code/Jar/j/Downloadjavajsonjar.htm)
+- json-simple-1.1.jar (http://www.java2s.com/Code/Jar/j/Downloadjsonsimple11jar.htm)
+
+Pour plus d'informations concernant le code réalisé, merci de contacter l'un des membres du groupe par mail.
+
 
 Lucas Lelièvre, 
 Clément Le Huërou, 
