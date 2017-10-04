@@ -6,7 +6,7 @@ Projet Développement Logiciel : Partie 1
 Analyse du Projet#3 : «MatrixSynthesizerWikipedia»
 
 Le répertoire "PDL-Wiki" fourni une première approche de l'utilisation de Wikidata dans le cadre de ce projet. 
-Le code mis en place permet de récupérer l'identifiant d'une page (ex : "Q142") à partir d'un mot/phrase saisi(e). Une sélection parmi les différents résultats obtenus a également été mise en place. 
+Le code mis en place permet de récupérer l'identifiant d'une page (ex : "Q142") à partir d'un mot saisi. Une sélection parmi les différents résultats obtenus a également été mise en place. 
 Enfin, nous avons effectué un exemple du fonctionnement de la récupération d'une donnée spécifique à la recherche demandée. 
 
 2 jar sont nécessaire : 
@@ -20,4 +20,4 @@ Lucas Lelièvre,
 Clément Le Huërou, 
 Olivier La Rivière, 
 Vincent Pelletier, 
-Vivien Busson, 
+Vivien Busson

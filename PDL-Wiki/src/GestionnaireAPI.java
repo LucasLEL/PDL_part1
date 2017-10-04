@@ -4,42 +4,42 @@ import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import org.json.JSONException;
-import org.json.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
 /**
  * Classe GestionnaireAPI
- * Cette classe permet d'effectuer la gestion (appels, traitement des donn�es recus) des diff�rentes API
+ * Cette classe permet d'effectuer la gestion (appels, traitement des données recus) des différentes API
  */
 public class GestionnaireAPI {
 
 	private String url;
-	private String criterion;
+	private String criteria;
 
 	/**
-	 * 
-	 * @param url
-	 * @param criterion
+	 * Constructeur de la classe, qui initilise les paramètres
+	 * @param url l'url de l'API
+	 * @param criteria le critère de recherche
 	 */
-	public GestionnaireAPI(String url, String criterion) {
+	public GestionnaireAPI(String url, String criteria) {
 		this.url = url;
-		this.criterion = criterion;
+		this.criteria = criteria;
 	}
 
 	/**
 	 * 
-	 * @return
+	 * Méthode getJSON() qui effectue un appel HTTP sur une API (avec url et critère, les paramètres de la classe
+	 * @return le résutat de l'appel à l'API
 	 * @throws IOException
 	 * @throws JSONException
 	 */
 	public String getJSON() throws IOException, JSONException {
 
-		String urlCriterion = this.url;
-		urlCriterion += this.criterion;
+		String urlcriteria = this.url;
+		urlcriteria += this.criteria;
 
 		String jsonRet = "";
-		URL searchURL = new URL(urlCriterion);
+		URL searchURL = new URL(urlcriteria);
 		URLConnection yc = searchURL.openConnection();
 		BufferedReader in = new BufferedReader(new InputStreamReader(yc.getInputStream()));
 		String inputLine;
@@ -52,40 +52,8 @@ public class GestionnaireAPI {
 	}
 
 	/**
-	 * 
-	 * @return
-	 */
-	public String getUrl() {
-		return url;
-	}
-
-	/**
-	 * 
-	 * @param url
-	 */
-	public void setUrl(String url) {
-		this.url = url;
-	}
-
-	/**
-	 * 
-	 * @return
-	 */
-	public String getCriterion() {
-		return criterion;
-	}
-
-	/**
-	 * 
-	 * @param criterion
-	 */
-	public void setCriterion(String criterion) {
-		this.criterion = criterion;
-	}
-
-	/**
-	 * 
-	 * @param urlPage : Lien vers le JSON.
+	 * Méthode headerJson
+	 * @param urlPage : Lien vers le JSON
 	 * @return
 	 * @throws ParseException
 	 * @throws JSONException
@@ -101,14 +69,11 @@ public class GestionnaireAPI {
 
 	/**
 	 * 
-	 * @param entityData
-	 *            Niveau de hi�rarchie JSON :
-	 * @param r1
-	 *            niveau de la racine 1
-	 * @param r2
-	 *            niveau de la racine 2
-	 * @param r3
-	 *            niveau de la racine 3
+	 * Méthode labelAccess
+	 * @param entityData Niveau de hiérarchie JSON :
+	 * @param r1 niveau de la racine 1
+	 * @param r2 niveau de la racine 2
+	 * @param r3 niveau de la racine 3
 	 * @return
 	 * @throws ParseException
 	 * @throws JSONException
@@ -122,5 +87,37 @@ public class GestionnaireAPI {
 		org.json.simple.JSONObject titleJson = (org.json.simple.JSONObject) JSONValue.parseWithException(langue);
 		String title = titleJson.get(r3).toString();
 		return title;
+	}
+	
+	/**
+	 * Accesseur de l'attribut url
+	 * @return
+	 */
+	public String getUrl() {
+		return url;
+	}
+
+	/**
+	 * Modificateur de l'attribut url 
+	 * @param url
+	 */
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	/**
+	 * Accesseur de l'attribut criteria
+	 * @return criteria
+	 */
+	public String getCriteria() {
+		return criteria;
+	}
+
+	/**
+	 * Modificateur de l'attribut criteria
+	 * @param criteria
+	 */
+	public void setCriteria(String criteria) {
+		this.criteria = criteria;
 	}
 }
