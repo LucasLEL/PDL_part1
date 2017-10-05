@@ -52,7 +52,7 @@ public class GestionnaireAPI {
 	}
 
 	/**
-	 * Méthode headerJson
+	 * Méthode headerJson qui retourne le chemin de l'id de la recherche pour le header du JSON. (Entitites / ID).
 	 * @param urlPage : Lien vers le JSON
 	 * @return
 	 * @throws ParseException
@@ -69,7 +69,7 @@ public class GestionnaireAPI {
 
 	/**
 	 * 
-	 * Méthode labelAccess
+	 * Méthode labelAccess --> Affiche les éléments sur 3 hiérarchie. (ex : description / fr / value).
 	 * @param entityData Niveau de hiérarchie JSON :
 	 * @param r1 niveau de la racine 1
 	 * @param r2 niveau de la racine 2
